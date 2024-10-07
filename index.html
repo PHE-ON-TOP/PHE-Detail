@@ -9,7 +9,7 @@
             padding: 0;
             height: 100%;
             width: 100%;
-            background-color: rgb(0, 0, 0);
+            background: linear-gradient(to bottom, #1a1a1a, #000000);
             color: white;
             font-family: Arial, sans-serif;
             font-size: 17px;
@@ -25,14 +25,23 @@
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgb(49, 49, 49);
-            text-align: center;
-            max-width: 500px;
+            max-width: 700px;
             width: 100%;
             box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .section {
+            width: 45%;
+            text-align: center;
         }
 
         h1 {
             font-size: 35px;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         p, ul {
@@ -44,6 +53,7 @@
 
         ul {
             list-style-type: none;
+            padding: 0;
         }
 
         li {
@@ -94,40 +104,48 @@
             .content {
                 max-width: 95%;
                 padding: 10px;
+                flex-direction: column;
+            }
+
+            .section {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
+    <h1>Welcome to Phe Website</h1>
     <div class="content">
-        <h1>Welcome to Phe Website</h1>
+        <div class="section">
+            <h1>Owner</h1>
+            <ul>
+                <li><a href="https://www.roblox.com/users/37404383/profile">@butterking18</a></li>
+                <li><a href="https://www.roblox.com/games/109469099778156/The-Savage-Combat-Test">Map : The Savage [Test]</a></li>
+            </ul>
+            
+            <h1>Social Networks</h1>
+            <ul>
+                <li><a href="https://www.tiktok.com/@phoomphat_phe">Tiktok</a></li>
+                <li><a href="https://discord.gg/phoomphat">Discord</a></li>
+                <li><a href="https://www.youtube.com/@Ph00mphAt_n">Youtube</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100036046837876&mibextid=ZbWKwL">Facebook</a></li>
+                <li><a href="https://www.roblox.com/groups/34907746/PHE-Group">Roblox Group</a></li>
+            </ul>
+        </div>
         
-        <h1>Owner</h1>
-        <ul>
-            <li><a href="https://www.roblox.com/users/37404383/profile">@butterking18</a></li>
-            <li><a href="https://www.roblox.com/games/109469099778156/The-Savage-Combat-Test">Map : The Savage [Test]</a></li>
-        </ul>
-        
-        <h1>Staffs</h1>
-        <ul>
-            <li><a href="https://www.roblox.com/users/1338050277/profile">@hiiggjjhikok</a></li>
-            <li><a href="https://www.roblox.com/users/6016908523/profile">@gunXD1937</a></li>
-            <li><a href="https://www.roblox.com/users/3410714490/profile">@stewhook30</a></li>
-            <li><a href="https://www.roblox.com/users/1547445463/profile">@ink79Sansv2</a></li>
-            <li><a href="https://www.roblox.com/users/2898639446/profile">@MATTXD655</a></li>
-            <li><a href="https://www.roblox.com/users/1912743151/profile">@SANSPORCH</a></li>
-            <li><a href="https://www.roblox.com/users/2924621695/profile">@TONKLA_1999</a></li>
-            <li><a href="https://www.roblox.com/users/1238940666/profile">@SUNDAYNOOBXD</a></li>
-        </ul>
-        
-        <h1>Social Networks</h1>
-        <ul>
-            <li><a href="https://www.tiktok.com/@phoomphat_phe">Tiktok</a></li>
-            <li><a href="https://discord.gg/phoomphat">Discord</a></li>
-            <li><a href="https://www.youtube.com/@Ph00mphAt_n">Youtube</a></li>
-            <li><a href="https://www.facebook.com/profile.php?id=100036046837876&mibextid=ZbWKwL">Facebook</a></li>
-            <li><a href="https://www.roblox.com/groups/34907746/PHE-Group">Roblox Group</a></li>
-        </ul>
+        <div class="section">
+            <h1>Staffs</h1>
+            <ul>
+                <li><a href="https://www.roblox.com/users/1338050277/profile">@hiiggjjhikok</a></li>
+                <li><a href="https://www.roblox.com/users/6016908523/profile">@gunXD1937</a></li>
+                <li><a href="https://www.roblox.com/users/3410714490/profile">@stewhook30</a></li>
+                <li><a href="https://www.roblox.com/users/1547445463/profile">@ink79Sansv2</a></li>
+                <li><a href="https://www.roblox.com/users/2898639446/profile">@MATTXD655</a></li>
+                <li><a href="https://www.roblox.com/users/1912743151/profile">@SANSPORCH</a></li>
+                <li><a href="https://www.roblox.com/users/2924621695/profile">@TONKLA_1999</a></li>
+                <li><a href="https://www.roblox.com/users/1238940666/profile">@SUNDAYNOOBXD</a></li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
