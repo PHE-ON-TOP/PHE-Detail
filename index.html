@@ -24,7 +24,7 @@
         }
 
         .content {
-            background-color: rgba(255, 255, 255, 0.034);
+            background-color: rgba(255, 255, 255, 0.025);
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgb(23, 159, 201, 0.8);
@@ -99,6 +99,7 @@
             border: 8px solid rgba(23, 159, 201, 0.8);
             transform: scale(0);
             animation: expandFade 0.5s ease-out forwards;
+            pointer-events: none;
         }
 
         @keyframes expandFade {
@@ -204,22 +205,18 @@
             }
         });
 
-        function fadeLink(link) {
-            link.classList.add('clicked');
-        }
-
-        document.body.addEventListener('click', function(e) {
+        document.addEventListener('click', (event) => {
             const circle = document.createElement('div');
-            circle.classList.add('circle');
-            circle.style.width = '70px';
-            circle.style.height = '70px';
-            circle.style.left = `${e.clientX - 35}px`;
-            circle.style.top = `${e.clientY - 35}px`;
+            circle.className = 'circle';
             document.body.appendChild(circle);
-
-            circle.addEventListener('animationend', function() {
+            const size = Math.random() * 50 + 50;
+            circle.style.width = size + 'px';
+            circle.style.height = size + 'px';
+            circle.style.left = event.pageX - size / 2 + 'px';
+            circle.style.top = event.pageY - size / 2 + 'px';
+            setTimeout(() => {
                 circle.remove();
-            });
+            }, 500);
         });
     </script>
 </body>
