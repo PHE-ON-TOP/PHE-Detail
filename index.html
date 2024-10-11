@@ -10,7 +10,7 @@
             height: 100%;
             width: 100%;
             background: linear-gradient(to bottom, #1a1a1a, #000000);
-            color: white;
+            color: #179fc9;
             font-family: Arial, sans-serif;
             font-size: 17px;
             display: flex;
@@ -18,6 +18,9 @@
             align-items: center;
             justify-content: center;
             line-height: 1.6;
+            position: relative;
+            overflow: hidden;
+            user-select: none;
         }
 
         .content {
@@ -63,10 +66,46 @@
         a {
             color: white;
             text-decoration: none;
+            transition: transform 0.3s ease, color 0.3s ease;
         }
 
         a:hover {
-            text-decoration: underline;
+            color: #179fc9;
+            text-decoration: none;
+        }
+
+        a:active {
+            color: #585858;
+        }
+
+        a.clicked {
+            animation: fadeIn 1.5s forwards;
+            pointer-events: none;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: transparent;
+            border: 8px solid rgba(23, 159, 201, 0.8);
+            transform: scale(0);
+            animation: expandFade 0.5s ease-out forwards;
+        }
+
+        @keyframes expandFade {
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
         }
 
         @media screen and (max-width: 1080px) {
@@ -114,38 +153,74 @@
     </style>
 </head>
 <body>
-    <h1>Welcome to Phe Website</h1>
+    <h1>Welcome to PHE Website</h1>
     <div class="content">
         <div class="section">
             <h1>Owner</h1>
             <ul>
-                <li><a href="https://www.roblox.com/users/37404383/profile">@butterking18</a></li>
-                <li><a href="https://savage-nine.vercel.app/">Map : The Savage</a></li>
+                <li><a href="https://www.roblox.com/users/37404383/profile" onclick="fadeLink(this)">@butterking18</a></li>
+                <li><a href="https://savage-nine.vercel.app/" onclick="fadeLink(this)">Map : The Savage</a></li>
             </ul>
             
             <h1>Social Medias</h1>
             <ul>
-                <li><a href="https://www.tiktok.com/@phoomphat_phe">Tiktok</a></li>
-                <li><a href="https://discord.gg/phoomphat">Discord</a></li>
-                <li><a href="https://www.youtube.com/@Ph00mphAt_n">Youtube</a></li>
-                <li><a href="https://www.facebook.com/profile.php?id=100036046837876&mibextid=ZbWKwL">Facebook</a></li>
-                <li><a href="https://www.roblox.com/groups/34907746/PHE-Group">Roblox Group</a></li>
+                <li><a href="https://www.tiktok.com/@phoomphat_phe" onclick="fadeLink(this)">Tiktok</a></li>
+                <li><a href="https://discord.gg/phoomphat" onclick="fadeLink(this)">Discord</a></li>
+                <li><a href="https://www.youtube.com/@Ph00mphAt_n" onclick="fadeLink(this)">Youtube</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100036046837876&mibextid=ZbWKwL" onclick="fadeLink(this)">Facebook</a></li>
+                <li><a href="https://www.roblox.com/groups/34907746/PHE-Group" onclick="fadeLink(this)">Roblox Group</a></li>
             </ul>
         </div>
         
         <div class="section">
             <h1>Staffs</h1>
             <ul>
-                <li><a href="https://www.roblox.com/users/4139703619/profile">@haijiji25</a></li>
-                <li><a href="https://www.roblox.com/users/1338050277/profile">@hiiggjjhikok</a></li>
-                <li><a href="https://www.roblox.com/users/6016908523/profile">@gunXD1937</a></li>
-                <li><a href="https://www.roblox.com/users/3410714490/profile">@stewhook30</a></li>
-                <li><a href="https://www.roblox.com/users/1547445463/profile">@ink79Sansv2</a></li>
-                <li><a href="https://www.roblox.com/users/2898639446/profile">@MATTXD655</a></li>
-                <li><a href="https://www.roblox.com/users/1912743151/profile">@SANSPORCH</a></li>
-                <li><a href="https://www.roblox.com/users/1238940666/profile">@SUNDAYNOOBXD</a></li>
+                <li><a href="https://www.roblox.com/users/4139703619/profile" onclick="fadeLink(this)">@haijiji25</a></li>
+                <li><a href="https://www.roblox.com/users/1338050277/profile" onclick="fadeLink(this)">@hiiggjjhikok</a></li>
+                <li><a href="https://www.roblox.com/users/6016908523/profile" onclick="fadeLink(this)">@gunXD1937</a></li>
+                <li><a href="https://www.roblox.com/users/3410714490/profile" onclick="fadeLink(this)">@stewhook30</a></li>
+                <li><a href="https://www.roblox.com/users/1547445463/profile" onclick="fadeLink(this)">@ink79Sansv2</a></li>
+                <li><a href="https://www.roblox.com/users/2898639446/profile" onclick="fadeLink(this)">@MATTXD655</a></li>
+                <li><a href="https://www.roblox.com/users/1912743151/profile" onclick="fadeLink(this)">@SANSPORCH</a></li>
+                <li><a href="https://www.roblox.com/users/1238940666/profile" onclick="fadeLink(this)">@SUNDAYNOOBXD</a></li>
             </ul>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+            }
+        });
+
+        document.addEventListener('mousedown', function(e) {
+            if (e.button === 0) {
+                e.preventDefault();
+            }
+        });
+
+        function fadeLink(link) {
+            link.classList.add('clicked');
+        }
+
+        document.body.addEventListener('click', function(e) {
+            const circle = document.createElement('div');
+            circle.classList.add('circle');
+            circle.style.width = '70px';
+            circle.style.height = '70px';
+            circle.style.left = `${e.clientX - 35}px`;
+            circle.style.top = `${e.clientY - 35}px`;
+            document.body.appendChild(circle);
+
+            circle.addEventListener('animationend', function() {
+                circle.remove();
+            });
+        });
+    </script>
 </body>
 </html>
